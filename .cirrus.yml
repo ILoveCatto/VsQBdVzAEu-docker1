@@ -8,8 +8,14 @@ task:
     platform: linux
     cpu: 4
     memory: 16G
- 
+  
+  # Environment variables:
+  env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY_URL }}
+
   # Instructions:
-    Docker_Login_script: docker login -u="${{ secrets.DOCKER_USERNAME }}" -p="${{ secrets.DOCKER_PASSWORD }}" ${{ secrets.DOCKER_REGISTRY_URL }}
-    Image_Build_script: docker build -f Dockerfiles/CI-Test/Dockerfile -t quay.io/lumine/ptero-images:ci-test .
-    Image_Push_script: docker push quay.io/lumine/ptero-images:ci-test
+  Docker_Login_script: docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" ${DOCKER_REGISTRY}
+  Build_Image_script: docker build -f Dockerfiles/Test-CI-Egg/Dockerfile -t ${DOCKER_REGISTRY}/lumine/ptero-images:test-egg .
+  Push_Image_script: docker push ${DOCKER_REGISTRY}/lumine/ptero-images:test-egg
