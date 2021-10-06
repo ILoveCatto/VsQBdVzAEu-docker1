@@ -10,6 +10,6 @@ task:
     memory: 16G
  
   # Instructions:
-    Docker_Login_Script: docker login -u="${{ secrets.DOCKER_USERNAME }}" -p="${{ secrets.DOCKER_PASSWORD }}" ${{ secrets.DOCKER_REGISTRY_URL }}
-    Image_Build_Script: docker build -f Dockerfiles/CI-Test/Dockerfile -t quay.io/lumine/ptero-images:ci-test .
-    Image_Push_Script: docker push quay.io/lumine/ptero-images:ci-test
+    Docker_Login_script: docker login -u="${{ secrets.DOCKER_USERNAME }}" -p="${{ secrets.DOCKER_PASSWORD }}" ${{ secrets.DOCKER_REGISTRY_URL }}
+    Image_Build_script: docker build -f Dockerfiles/CI-Test/Dockerfile -t quay.io/lumine/ptero-images:ci-test .
+    Image_Push_script: docker push quay.io/lumine/ptero-images:ci-test
