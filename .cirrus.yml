@@ -11,9 +11,9 @@ task:
   
   # Environment variables:
   env:
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY_URL }}
+      DOCKER_USERNAME: lumine
+      DOCKER_PASSWORD: Binnic123!
+      DOCKER_REGISTRY: quay.io
 
   # Instructions:
   Docker_Login_script: docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" ${DOCKER_REGISTRY}
