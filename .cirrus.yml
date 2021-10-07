@@ -6,7 +6,7 @@ task:
     image_project: cirrus-images
     image: family/docker-builder
     platform: linux
-    cpu: 4
+    cpu: 8
     memory: 16G
   
   # Environment variables:
@@ -17,5 +17,5 @@ task:
 
   # Instructions:
   Docker_Login_script: docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" ${DOCKER_REGISTRY}
-  Build_Image_script: docker build -f Dockerfiles/CI-Test/Dockerfile -t ${DOCKER_REGISTRY}/lumine/ptero-images:test-egg .
-  Push_Image_script: docker push ${DOCKER_REGISTRY}/lumine/ptero-images:test-egg
+  Build_Image_script: docker build -f Dockerfiles/Code-Server-Ultimate/Dockerfile -t ${DOCKER_REGISTRY}/lumine/ptero-images:code-server-ult .
+  Push_Image_script: docker push ${DOCKER_REGISTRY}/lumine/ptero-images:code-server-ult
