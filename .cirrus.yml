@@ -12,7 +12,7 @@ task:
   # Environment variables:
   env:
       DOCKER_USERNAME: lumine
-      DOCKER_PASSWORD: Binnic123!
+      DOCKER_PASSWORD: 51TB3owcp36kTtaYozoBFwpN+ud1GEp5/uSThgQgcaeRGHvWLbF5DH2d29HJuQ9U
       DOCKER_REGISTRY: quay.io
 
   # Instructions:
