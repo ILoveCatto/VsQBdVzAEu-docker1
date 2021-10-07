@@ -17,5 +17,5 @@ task:
 
   # Instructions:
   Docker_Login_script: docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" ${DOCKER_REGISTRY}
-  Build_Image_script: docker build -f Dockerfiles/Code-Server-Ultimate/Dockerfile -t ${DOCKER_REGISTRY}/lumine/ptero-images:code-server-ult .
+  Build_Image_script: docker build -f Code-Server-Ultimate/Dockerfile -t ${DOCKER_REGISTRY}/lumine/ptero-images:code-server-ult .
   Push_Image_script: docker push ${DOCKER_REGISTRY}/lumine/ptero-images:code-server-ult
