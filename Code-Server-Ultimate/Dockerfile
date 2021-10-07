@@ -10,9 +10,6 @@ RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~
 RUN wget https://golang.org/dl/go1.17.1.linux-amd64.tar.gz \
     && tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz \
     && export PATH=$PATH:/usr/local/go/bin
-RUN curl -s https://get.sdkman.io | bash \
-    && bash ~/.sdkman/bin/sdkman-init.sh \
-    && sdk install kotlin
 USER container
 ENV  USER=container HOME=/home/container
 
