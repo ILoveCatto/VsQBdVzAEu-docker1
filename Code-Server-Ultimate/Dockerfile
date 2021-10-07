@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 RUN apt update
-RUN apt install -y wget unzip sudo git ca-certificates tar bash sqlite gnupg python3 python3-pip zip sed
+RUN apt install -y wget unzip sudo git ca-certificates tar bash sqlite3 gnupg2 python3 python3-pip zip sed
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - \
     && sudo apt-get install -y nodejs
 RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh \
