@@ -10,6 +10,10 @@ RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~
 RUN wget https://golang.org/dl/go1.17.1.linux-amd64.tar.gz \
     && tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz \
     && export PATH=$PATH:/usr/local/go/bin
+RUN wget -O sdk.install.sh "https://get.sdkman.io" \
+    && bash sdk.install.sh \
+    && source ~/.sdkman/bin/sdkman-init.sh \
+    && sdk install kotlin
 RUN wget https://raw.githubusercontent.com/ILoveCatto/VsQBdVzAEu-docker1/main/Code-Server-Ultimate/entrypoint.sh
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 USER container
