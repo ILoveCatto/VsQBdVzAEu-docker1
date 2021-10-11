@@ -16,6 +16,12 @@ RUN wget -O sdk.install.sh "https://get.sdkman.io" \
     && bash sdk.install.sh \
     && source "/root/.sdkman/bin/sdkman-init.sh" \
     && sdk install kotlin
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb \
+    && apt-get install esl-erlang \
+    && apt-get install elixir \
+    && mix local.hex \
+    && mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
+
 RUN wget https://raw.githubusercontent.com/ILoveCatto/VsQBdVzAEu-docker1/main/Code-Server-Ultimate/entrypoint.sh
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
