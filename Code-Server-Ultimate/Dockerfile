@@ -1,5 +1,7 @@
 FROM debian:stable-slim
 
+SHELL ["/bin/bash", "-c"]
+
 RUN apt update
 RUN apt install -y curl wget unzip sudo git ca-certificates tar bash sqlite3 gnupg2 python3 python3-pip zip sed
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - \
@@ -22,7 +24,5 @@ USER container
 ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
-
-SHELL ["/bin/bash", "-c"] 
 
 CMD ["/bin/bash", "/entrypoint.sh"]
